@@ -66,7 +66,8 @@ app.Run();
 public class TestDbContext : DbContext
 {
     public TestDbContext(DbContextOptions<TestDbContext> options) : base(options) { }
-    public DbSet<Product> Products { get; set; } = null!;
+
+    public DbSet<Product> Products => Set<Product>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
